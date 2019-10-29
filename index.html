@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ALONE Dashboard for Older Persons and Volunteer Status</title>
+    
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="static/css/dc.min.css" type="text/css" />
+    <link rel="stylesheet" href="static/css/style.css" type="text/css" />
+    
+    <!-- Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    
+    <!-- JS links -->
+    <script type="text/javascript" src="static/js/d3.min.js"></script>
+    <script type="text/javascript" src="static/js/crossfilter.min.js"></script>
+    <script type="text/javascript" src="static/js/dc.min.js"></script>
+    <script type="text/javascript" src="static/js/queue.min.js"></script>
+    <script type="text/javascript" src="static/js/graph.js"></script>
+    
+    
+</head>
+
+<body>
+<!-- navbar -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="https://alone.ie/">ALONE</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Jumbotron 
+
+<div class="jumbotron">
+  <h1 class="display-3">Hello, world!</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </p>
+</div>
+
+<div class="row">
+    <div class="col">
+        <a href="" class=""></a>
+    </div>
+    
+</div> -->
+    
+<!-- Graphs --> 
+<div class="row">
+    <div class="col" style="padding: 10px">
+    <h2 style="align-text:center">A comparison of <strong>Contact Record Type</strong>: Old Persons and Volunteers</h2>
+    </div>
+    
+                <div class="opvol-filter contactrecordtype shadow-box"> 
+                    
+                <!-- Record Type Selector -->
+                    <div id="contactrecordtype-selector">    
+                        <h3>Filter by Older Person or by Volunteer: </h3>
+                    </div>
+                </div>
+</div>
+   <!-- Gender Breakdown Section -->        
+    <section class="container-fluid gender-cho">
+        
+                    
+                    
+        <div class="row">     
+                
+                <!-- Gender Beakdown Graph -->
+                <div id="op-gender" class="shadow-box col-xs-12 col-md-6 eq-column-height">
+                    <h3>Gender Breakdown</h3>
+                    <hr>
+                </div>
+            
+                <!-- Gender Beakdown percentage -->   
+            <div class="col-xs-12 col-md-6 eq-column-height shadow-box">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                        <div>
+                                            <i class="fas fa-female gender-icon" style="color: fuchsia"></i>
+                                        </div>
+                                    <div class="gender-percent">
+                                        <div id="percent-female"></div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <div><i class="fas fa-male gender-icon" style="color: blue"></i></div>
+                                    <div class="gender-percent">
+                                        <div id="percent-male"></div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <div><i class="fas fa-genderless gender-icon" style="color: gray"></i></div>
+                                    <div class="gender-percent">
+                                        <div id="percent-undeclared"></div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <div><i class="fa fa-question-circle gender-icon" style="color: orange"></i></div>
+                                    <div class="gender-percent">
+                                        <div id="percent-unknown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        <p class="gender-text">A lot of the entries in this data set are from heroes who first appeared as early as the 1930's, therefore it's not overly surprising to see men outnumber women by 2.5 to 1.</p>
+                        <p class="gender-text">Throughout this page, where you see the word <a href="https://en.oxforddictionaries.com/definition/guy" target="_blank" class="inline-link" title="Oxford English Dictionary">'guys'</a>, this is used to refer to the super heroes
+                            as a whole, and is not intended to be gender specific.</p>
+            </div>
+        </div>
+    </section>
+            
+                    
+                    <!-- Breakdown by CHO Area -->       
+        <div class="row">
+                    <div id="cho-area" class="container-fluid shadow-box col-xs-12 col-md-8 clearfix">
+                        <h3>Breakdown by CHO Area</h3>
+                        <hr>
+                    </div>
+        </div>
+
+ 
+ 
+<div class="row">
+    <section class="col-xs-12 col-md-8">
+        <div class="container-fluid content-wrapper shadow-box">
+                    <h3 class="heading--h3">Status of Old Persons and Volunteers</h3>
+                    <div>
+                        <hr>
+                        <div id="statuspie" class="chart"></div>
+                        <p>The good guys outnumber the rest by almost 2 to 1 - makes you wonder how they make it look so difficult all the time!</p>
+                        <p>When filtering by male & female, there is a clear difference. 1 in 3 males are bad, but for females it's less than 1 in 5.</p>
+                    </div>
+        </div>
+    </section>
+</div>  
+
+<div class="row">
+    <section class="col-xs-12 col-md-6">
+        <div class="container content-wrapper shadow-box">
+                    <h3 class="heading--h3">Breakdown of Role Types</h3>
+                    <div>
+                        <hr>
+                        <div id="roletype" class="chart"></div>
+                        <p>This is role type</p>
+                        <p>Role type paragraphy two.</p>
+                    </div>
+        </div>
+        <div class="container content-wrapper shadow-box">
+             <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <h2><span scope="col">All Roles Types - Breakdown By Percentage</span></h2>
+                          
+                        </tr>
+                        <tr>
+                          <th scope="col">Role Type</th>
+                          <th scope="col">Percentage</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="table-primary">
+                          <td scope="row">Volunteer Role</td>
+                          <td id="vol_role_percent"></td>
+                        </tr>
+                        <tr>
+                          <td scope="row">Support Coordination Role </td>
+                          <td id="sc_role_percent"></td>
+                        </tr>
+                        <tr class="table-primary">
+                          <td scope="row">Befriended Role</td>
+                          <td id="bf_role_percent"></td>
+                        </tr>
+                        <tr>
+                          <td scope="row">Friendly Calls Role </td>
+                          <td id="fc_role_percent"></td>
+                        </tr>
+                        <tr class="table-primary">
+                          <td scope="row">Housing Applicant Role</td>
+                          <td id="ha_role_percent"></td>
+                        </tr>
+                        <tr>
+                          <td scope="row">Clubs and Activities Role </td>
+                          <td id="sa_role_percent"></td>
+                        </tr>
+                        <tr class="table-primary">
+                          <td scope="row">Tenant Role</td>
+                          <td id="tn_role_percent"></td>
+                        </tr>
+                        <tr>
+                          <td scope="row">BConnect Tech Role </td>
+                          <td id="bc_role_percent"></td>
+                        </tr>
+                        
+                      </tbody>
+                    </table> 
+                    <hr>
+        </div>
+    </section>
+</div> 
+
+<div class="row">
+    <div class="col content-wrapper shadow-box">
+        <div id="rolecreateddate"></div>
+        <h3>Role Created Date vs Role Type</h3>
+    </div>
+</div>
+
+
+ 
+  <!--Footer -->
+    <footer class=" footer">
+        <div class="container">
+            <div class="row footer-content">
+                <div class="col-xs-12 col-sm-4">
+                    <div>&copy;2019 Abdul Haseeb</div>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <a href="#" target="_blank"><i class="fab fa-github github-logo"></i></a>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <div>Original data has been modified (in consideration to GDPR) is based upon the work that the organisation does with Older People and volunteers.  <span><a href="https://www.alone.ie" target="_blank"><img src="https://alone.ie/wp-content/uploads/2016/12/ALONE-Logo-BlackEndline.png" style="width:10%" alt="alone.ie"></a></span></div>
+                </div>
+            </div>
+        </div>
+    </footer>    
+</body>
+</html>

@@ -1,0 +1,155 @@
+/* --.contactrecordtype {
+    background-color: #d0d0d0;
+    padding: 20px;
+    border: 1px solid #000;
+    border-radius: 10px;
+} ---*/
+
+body {
+    background-color: #00b7ff;
+    width: 100%;
+}
+
+.row [class*=col-]{
+    margin:0 -.3px;
+}
+
+
+
+.shadow-box {
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    border-radius: 5px;
+    width: 100%;
+    padding: 15px 10px;
+    margin: 15px;
+    text-align: center;
+  -webkit-transition: all 350ms ease-in-out;
+  -o-transition: all 350ms ease-in-out;
+  transition: all 350ms ease-in-out;
+}
+
+.shadow-box.shadow-box:hover {
+  -webkit-box-shadow: 0 30px 80px rgba(0, 0, 0, 0.20), 0 20px 70px rgba(0, 0, 0, 0.20);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.14), 0 20px 70px rgba(0, 0, 0, 0.12);
+  background-color: #f2f2f2;
+  -webkit-transition: all 350ms ease-in-out;
+  -o-transition: all 350ms ease-in-out;
+  transition: all 350ms ease-in-out;
+}
+
+.gender-cho {
+    display: inline-block;
+}
+
+#op-gender {
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    width: 50%;
+}
+
+#cho-area {
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    width: 33%;
+}
+
+
+
+#contactrecordtype-selector {
+    background-color: #f2f2f2;
+    padding: 10px;
+    width: 100%;
+    align-items: center;
+    
+}
+
+.dropdown-filter {
+    justify-content: space-around;
+    align-items: center;
+}
+
+/*---------------------------------------------- Gender Icons ---------------------*/
+
+.gender-icon {
+    font-size: 4.5em;
+    text-align: center;
+    display: inline-block;
+}
+
+.gender-percent {
+    font-size: 1.4em;
+    display: inline-block;
+    justify-content: center;
+    font: bolder;
+    margin: 20px;
+}
+
+.gender-text {
+    margin: 10px 0;
+}
+.eq-column-height {
+    background-color: #f2f2f2;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    width: 50%;
+}
+
+.set-min-height {
+    min-height: calc(100vh - 141px);
+}
+
+
+.content-wrapper {
+    width: 100%;
+    padding: 15px 10px;
+    margin: 12.5px 0;
+    text-align: center;
+} 
+
+/*---------------------------------------------- Charts ---------------------*/
+
+.chart {
+    width: 100%;
+    height: 100%;
+    margin: 0 0 10px 0;
+}
+
+/*---------------------------------------------- Footer ---------------------*/
+
+.footer {
+    min-height: 50px;
+    margin-top: 15px;
+    background-color: #d9d9d9;
+    color: black;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    padding: 8px;
+}
+
+.github-logo {
+    color: black;
+    font-size: 2em;
+    padding: 10px 0;
+    transition: all .2s ease-in-out
+}
+
+.github-logo:focus,
+.github-logo:hover {
+    color: red;
+}
+
+@media (min-width: 768px) {
+    .github-logo {
+        font-size: 2.4em;
+    }
+}
