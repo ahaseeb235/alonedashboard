@@ -19,6 +19,7 @@
     <script type="text/javascript" src="static/js/crossfilter.min.js"></script>
     <script type="text/javascript" src="static/js/dc.min.js"></script>
     <script type="text/javascript" src="static/js/queue.min.js"></script>
+    <script type="text/javascript" src="static/js/alonecompChart.js"></script>
     <script type="text/javascript" src="static/js/graph.js"></script>
     
     
@@ -92,7 +93,7 @@
                 </div>
             
                 <!-- Gender Beakdown percentage -->   
-            <div class="col-xs-12 col-md-6 eq-column-height shadow-box">
+            <div class="col-xs-12 col-md-8 eq-column-height shadow-box">
                             <div class="row">
                                 <div class="col-xs-3">
                                         <div>
@@ -131,7 +132,7 @@
                     
                     <!-- Breakdown by CHO Area -->       
         <div class="row">
-                    <div id="cho-area" class="container-fluid shadow-box col-xs-12 col-md-8 clearfix">
+                    <div id="cho-area" class="shadow-box col-xs-12 col-md-8 clearfix">
                         <h3>Breakdown by CHO Area</h3>
                         <hr>
                     </div>
@@ -139,8 +140,8 @@
 
  
  
-<div class="row">
-    <section class="col-xs-12 col-md-8">
+<div class="container">
+    <section class="col-xs-12 col-md-12">
         <div class="container-fluid content-wrapper shadow-box">
                     <h3 class="heading--h3">Status of Old Persons and Volunteers</h3>
                     <div>
@@ -153,8 +154,8 @@
     </section>
 </div>  
 
-<div class="row">
-    <section class="col-xs-12 col-md-6">
+<div class="container">
+    <section class="col-xs-12 col-md-12">
         <div class="container content-wrapper shadow-box">
                     <h3 class="heading--h3">Breakdown of Role Types</h3>
                     <div>
@@ -219,8 +220,10 @@
 
 <div class="row">
     <div class="col content-wrapper shadow-box">
-        <div id="rolecreateddate"></div>
-        <h3>Role Created Date vs Role Type</h3>
+        <div class="col-xs-12 col-sm-12">
+            <h3>Role Created Date vs Role Type</h3>
+            <div id="rolecreateddate"></div>
+        </div>
     </div>
 </div>
 
@@ -230,14 +233,14 @@
     <footer class="footer">
         <div class="container">
             <div class="row footer-content">
-                <div class="col-xs-12 col-sm-4">
+                <div class="col-xs-12 col-sm-3">
                     <div>&copy;2019 Abdul Haseeb</div>
                 </div>
-                <div class="col-xs-12 col-sm-4">
-                    <a href="https://github.com/ahaseeb235/alonedashboard" target="_blank"><i class="fab fa-github github-logo"></i></a>
-                </div>
-                <div class="col-xs-12 col-sm-4">
+                <div class="col-xs-12 col-sm-6">
                     <div>Original data has been modified (in consideration to GDPR) is based upon the work that the organisation does with Older People and volunteers.  <span><a href="https://www.alone.ie" target="_blank"><img src="https://alone.ie/wp-content/uploads/2016/12/ALONE-Logo-BlackEndline.png" style="width:10%" alt="alone.ie"></a></span></div>
+                </div>
+                <div class="col-xs-12 col-sm-3">
+                    <a href="https://github.com/ahaseeb235/alonedashboard" target="_blank"><i class="fab fa-github github-logo"></i></a>
                 </div>
             </div>
         </div>

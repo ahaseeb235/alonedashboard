@@ -8,29 +8,6 @@ function makeGraphs (error, aloneData) {
     show_contactrecordtype_selector(ndx);
     
     
-    /* ---------- Role Type conversion to integer -------
-
-    
-    
-    var rolerecordType = [
-        "rolerecordtype",
-        //"Support Coordination Role",
-        //"befriended role",
-        //"Friendly Call Role",
-    ];
-    
-    function role_type_to_integer(roletype) {
-        // Convert all hero attributes to integers. Store as a
-        // lowercased variable of the same name.
-        roletype.forEach(function(rt) {
-            aloneData.forEach(function(d) {
-                var rt_lower = rt.toLowerCase();
-                d[rt_lower] = parseInt(d[rt], 20);
-            });
-        });
-    }
-
-    role_type_to_integer(rolerecordType); */
 
     
     /* ---------- Gender Percent ---------*/
@@ -60,9 +37,6 @@ function makeGraphs (error, aloneData) {
     /* ---------- Pie Charts -------------*/
     show_genderbystatus_breakdown(ndx);
     show_roletype_breakdown(ndx);
-    
-    /* ---------- composite Charts -------------*/
-   //show_role_created_date(ndx);
     
     
     
@@ -288,5 +262,5 @@ function show_roletype_breakdown(ndx) {
         });
  }
 
-// ---- composite chart for Role Created Date VS Role Type
 
+ 
